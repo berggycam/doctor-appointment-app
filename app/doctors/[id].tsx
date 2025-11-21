@@ -9,12 +9,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const MOCK_DOCTOR = {
     id: '1',
-    name: 'Dr. Sarah Wilson',
+    name: 'Dr. Ama Mensah',
     specialty: 'General Practitioner',
     rating: 4.8,
     reviews: 120,
     image: 'https://i.pravatar.cc/150?u=1',
-    about: 'Dr. Sarah Wilson is a highly experienced General Practitioner with over 10 years of experience in family medicine. She is dedicated to providing comprehensive care to patients of all ages.',
+    about: 'Dr. Ama Mensah is a highly experienced General Practitioner with over 10 years of experience in family medicine. She is dedicated to providing comprehensive care to patients of all ages.',
     experience: '10+ Years',
     patients: '1.5k+',
 };

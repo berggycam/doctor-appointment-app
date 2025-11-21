@@ -35,7 +35,7 @@ export default function CallScreen() {
             {/* Overlay Controls */}
             <SafeAreaView style={styles.overlay} edges={['top', 'bottom']}>
                 <View style={styles.header}>
-                    <Typography variant="h2" weight="bold" color={Colors.white} align="center">Dr. Sarah Wilson</Typography>
+                    <Typography variant="h2" weight="bold" color={Colors.white} align="center">Dr. Ama Mensah</Typography>
                     <Typography variant="body" color="rgba(255,255,255,0.8)" align="center">00:45</Typography>
                 </View>
 

@@ -7,8 +7,8 @@ import { FlatList, Image, StyleSheet, TouchableOpacity, View } from 'react-nativ
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const APPOINTMENTS = [
-    { id: '1', doctor: 'Dr. Sarah Wilson', specialty: 'General Practitioner', date: 'Today, 10:00 AM', status: 'Confirmed', image: 'https://i.pravatar.cc/150?u=1' },
-    { id: '2', doctor: 'Dr. James Lee', specialty: 'Cardiologist', date: 'Oct 28, 02:30 PM', status: 'Upcoming', image: 'https://i.pravatar.cc/150?u=2' },
+    { id: '1', doctor: 'Dr. Ama Mensah', specialty: 'General Practitioner', date: 'Today, 10:00 AM', status: 'Confirmed', image: 'https://i.pravatar.cc/150?u=1' },
+    { id: '2', doctor: 'Dr. Kofi Asante', specialty: 'Cardiologist', date: 'Oct 28, 02:30 PM', status: 'Upcoming', image: 'https://i.pravatar.cc/150?u=2' },
 ];
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];

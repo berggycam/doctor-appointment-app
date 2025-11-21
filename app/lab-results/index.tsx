@@ -7,9 +7,9 @@ import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const LAB_RESULTS = [
-    { id: '1', title: 'Complete Blood Count (CBC)', date: 'Oct 20, 2025', status: 'Normal', doctor: 'Dr. Sarah Wilson' },
-    { id: '2', title: 'Lipid Panel', date: 'Sep 15, 2025', status: 'Attention Needed', doctor: 'Dr. James Lee' },
-    { id: '3', title: 'Vitamin D Test', date: 'Aug 10, 2025', status: 'Normal', doctor: 'Dr. Sarah Wilson' },
+    { id: '1', title: 'Complete Blood Count (CBC)', date: 'Oct 20, 2025', status: 'Normal', doctor: 'Dr. Ama Mensah' },
+    { id: '2', title: 'Lipid Panel', date: 'Sep 15, 2025', status: 'Attention Needed', doctor: 'Dr. Kofi Asante' },
+    { id: '3', title: 'Vitamin D Test', date: 'Aug 10, 2025', status: 'Normal', doctor: 'Dr. Ama Mensah' },
 ];
 
 export default function LabResultsScreen() {

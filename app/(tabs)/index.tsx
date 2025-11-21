@@ -3,7 +3,7 @@ import { Typography } from '@/components/ui/Typography';
 import { BorderRadius, Colors, Shadows, Spacing } from '@/constants/theme';
 import { useRouter } from 'expo-router';
 import React from 'react';
-import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
@@ -15,9 +15,9 @@ export default function HomeScreen() {
         <View style={styles.header}>
           <View>
             <Typography variant="body" color={Colors.textSecondary}>Good Morning,</Typography>
-            <Typography variant="h2" weight="bold">David</Typography>
+            <Typography variant="h2" weight="bold">Kwame</Typography>
           </View>
-          <View style={styles.avatarPlaceholder} />
+          <Image source={{ uri: 'https://i.pravatar.cc/150?u=kwame' }} style={styles.avatarPlaceholder} />
         </View>
 
         {/* Next Appointment Card */}
@@ -27,7 +27,7 @@ export default function HomeScreen() {
             <IconSymbol name="calendar" size={24} color={Colors.white} />
           </View>
           <View style={styles.appointmentInfo}>
-            <Typography variant="body" color={Colors.white} weight="medium">Dr. Sarah Wilson</Typography>
+            <Typography variant="body" color={Colors.white} weight="medium">Dr. Ama Mensah</Typography>
             <Typography variant="caption" color="rgba(255,255,255,0.8)">General Practitioner</Typography>
             <View style={styles.timeContainer}>
               <IconSymbol name="clock.fill" size={16} color={Colors.white} />
@@ -49,9 +49,9 @@ export default function HomeScreen() {
         <Typography variant="h3" weight="semibold" style={styles.sectionTitle}>Recent Doctors</Typography>
         {/* Placeholder for horizontal scroll of doctors */}
         <View style={styles.doctorCard}>
-          <View style={styles.doctorAvatar} />
+          <Image source={{ uri: 'https://i.pravatar.cc/150?u=kofi' }} style={styles.doctorAvatar} />
           <View style={{ marginLeft: Spacing.m }}>
-            <Typography variant="body" weight="medium">Dr. James Lee</Typography>
+            <Typography variant="body" weight="medium">Dr. Kofi Asante</Typography>
             <Typography variant="caption" color={Colors.textSecondary}>Cardiologist</Typography>
           </View>
         </View>

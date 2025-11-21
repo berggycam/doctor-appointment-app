@@ -10,7 +10,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const MOCK_APPOINTMENT = {
     id: '1',
     doctor: {
-        name: 'Dr. Sarah Wilson',
+        name: 'Dr. Ama Mensah',
         specialty: 'General Practitioner',
         image: 'https://i.pravatar.cc/150?u=1',
     },

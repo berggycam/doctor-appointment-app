@@ -12,7 +12,7 @@ const MOCK_RESULT = {
     title: 'Complete Blood Count (CBC)',
     date: 'Oct 20, 2025',
     status: 'Normal',
-    doctor: 'Dr. Sarah Wilson',
+    doctor: 'Dr. Ama Mensah',
     summary: 'All values are within normal range. No signs of infection or anemia.',
     details: [
         { name: 'Hemoglobin', value: '14.5 g/dL', range: '13.5 - 17.5', status: 'Normal' },

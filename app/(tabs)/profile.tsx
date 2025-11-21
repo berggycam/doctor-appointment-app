@@ -36,7 +36,7 @@ export default function ProfileScreen() {
 
                 <View style={styles.profileCard}>
                     <Image source={{ uri: 'https://i.pravatar.cc/150?u=8' }} style={styles.avatar} />
-                    <Typography variant="h3" weight="bold" style={styles.name}>{user?.name || 'David Johnson'}</Typography>
+                    <Typography variant="h3" weight="bold" style={styles.name}>{user?.name || 'Kwame Osei'}</Typography>
                     <Typography variant="body" color={Colors.textSecondary}>{user?.email || 'david.johnson@example.com'}</Typography>
                     <View style={styles.editButton}>
                         <Typography variant="caption" color={Colors.primary} weight="semibold">Edit Profile</Typography>
@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     },
     content: {
         padding: Spacing.l,
+        paddingBottom: 100,
     },
     header: {
         flexDirection: 'row',

@@ -57,7 +57,7 @@ export default function EmergencyScreen() {
 
                 <View style={styles.contactCard}>
                     <View style={styles.contactInfo}>
-                        <Typography variant="body" weight="bold">Dr. Sarah Wilson</Typography>
+                        <Typography variant="body" weight="bold">Dr. Ama Mensah</Typography>
                         <Typography variant="caption" color={Colors.textSecondary}>General Practitioner</Typography>
                     </View>
                     <TouchableOpacity style={styles.callButton}>

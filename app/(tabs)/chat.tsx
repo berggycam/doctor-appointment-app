@@ -7,8 +7,8 @@ import { FlatList, Image, StyleSheet, TouchableOpacity, View } from 'react-nativ
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const CHATS = [
-    { id: '1', doctor: 'Dr. Sarah Wilson', lastMessage: 'Please take the medicine after food.', time: '10:30 AM', unread: 2, image: 'https://i.pravatar.cc/150?u=1' },
-    { id: '2', doctor: 'Dr. James Lee', lastMessage: 'Your lab results look good.', time: 'Yesterday', unread: 0, image: 'https://i.pravatar.cc/150?u=2' },
+    { id: '1', doctor: 'Dr. Ama Mensah', lastMessage: 'Please take the medicine after food.', time: '10:30 AM', unread: 2, image: 'https://i.pravatar.cc/150?u=1' },
+    { id: '2', doctor: 'Dr. Kofi Asante', lastMessage: 'Your lab results look good.', time: 'Yesterday', unread: 0, image: 'https://i.pravatar.cc/150?u=2' },
     { id: '3', doctor: 'Dr. Emily Chen', lastMessage: 'Appointment confirmed for Tuesday.', time: 'Oct 20', unread: 0, image: 'https://i.pravatar.cc/150?u=3' },
 ];
 

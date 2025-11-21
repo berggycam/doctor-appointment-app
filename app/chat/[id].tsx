@@ -8,7 +8,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const MOCK_MESSAGES = [
     { id: '1', text: 'Hello Dr. Wilson, I have a question about my prescription.', sender: 'me', time: '10:00 AM' },
-    { id: '2', text: 'Hi David, sure. What would you like to know?', sender: 'doctor', time: '10:05 AM' },
+    { id: '2', text: 'Hi Kwame, sure. What would you like to know?', sender: 'doctor', time: '10:05 AM' },
     { id: '3', text: 'Should I take it before or after meals?', sender: 'me', time: '10:06 AM' },
     { id: '4', text: 'Please take the medicine after food to avoid stomach upset.', sender: 'doctor', time: '10:30 AM' },
 ];
@@ -39,7 +39,7 @@ export default function ChatRoomScreen() {
                     <IconSymbol name="chevron.left" size={24} color={Colors.text} />
                 </TouchableOpacity>
                 <View style={styles.headerTitle}>
-                    <Typography variant="h3" weight="bold">Dr. Sarah Wilson</Typography>
+                    <Typography variant="h3" weight="bold">Dr. Ama Mensah</Typography>
                     <Typography variant="caption" color={Colors.success}>Online</Typography>
                 </View>
                 <View style={styles.headerActions}>

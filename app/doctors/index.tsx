@@ -10,8 +10,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const SPECIALTIES = ['All', 'General', 'Cardiology', 'Dentist', 'Neurology', 'Orthopedic'];
 
 const MOCK_DOCTORS = [
-    { id: '1', name: 'Dr. Sarah Wilson', specialty: 'General Practitioner', rating: 4.8, reviews: 120, image: 'https://i.pravatar.cc/150?u=1' },
-    { id: '2', name: 'Dr. James Lee', specialty: 'Cardiologist', rating: 4.9, reviews: 85, image: 'https://i.pravatar.cc/150?u=2' },
+    { id: '1', name: 'Dr. Ama Mensah', specialty: 'General Practitioner', rating: 4.8, reviews: 120, image: 'https://i.pravatar.cc/150?u=1' },
+    { id: '2', name: 'Dr. Kofi Asante', specialty: 'Cardiologist', rating: 4.9, reviews: 85, image: 'https://i.pravatar.cc/150?u=2' },
     { id: '3', name: 'Dr. Emily Chen', specialty: 'Dentist', rating: 4.7, reviews: 200, image: 'https://i.pravatar.cc/150?u=3' },
     { id: '4', name: 'Dr. Michael Brown', specialty: 'Neurologist', rating: 4.9, reviews: 50, image: 'https://i.pravatar.cc/150?u=4' },
 ];

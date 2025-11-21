@@ -12,7 +12,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export default function PersonalInfoScreen() {
     const router = useRouter();
     const { user } = useAuth();
-    const [name, setName] = useState(user?.name || 'David Johnson');
+    const [name, setName] = useState(user?.name || 'Kwame Osei');
     const [email, setEmail] = useState(user?.email || 'david.johnson@example.com');
     const [phone, setPhone] = useState('+1 234 567 8900');
     const [dob, setDob] = useState('1990-01-01');
