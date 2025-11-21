@@ -59,34 +59,8 @@ HealthApp is a comprehensive mobile healthcare solution that enables patients to
 
 ## 📸 Screenshots
 
-### Authentication & Onboarding
-![Login Screen](screenshots/login.jpg)
-*Secure login interface with email/password authentication and social login options*
 
-![Onboarding Flow](screenshots/onboarding.jpg)
-*Interactive onboarding screens introducing key app features to new users*
-
-### Home & Dashboard
-![Home Dashboard](screenshots/home.jpg)
-*Personalized home screen with upcoming appointments, quick actions, and recent doctors*
-
-### Doctor Discovery & Booking
-![Doctor Search](screenshots/doctor-search.jpg)
-*Search and filter doctors by specialty with ratings and reviews*
-
-![Doctor Profile](screenshots/doctor-profile.jpg)
-*Detailed doctor profiles with credentials, experience, and patient reviews*
-
-### Appointments & Communication
-![Appointments Calendar](screenshots/appointments.jpg)
-*Calendar view of appointments with monthly overview and appointment details*
-
-![Chat Interface](screenshots/chat.jpg)
-*Real-time messaging with healthcare providers for consultations and follow-ups*
-
-### Profile & Settings
-![User Profile](screenshots/profile.jpg)
-*User profile management with settings, medical records, and account options*
+![Homescreen](screenshots/profile.jpg)
 
 ---
 

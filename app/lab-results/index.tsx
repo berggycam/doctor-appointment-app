@@ -60,7 +60,7 @@ export default function LabResultsScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Colors.backgroundSecondary,
+        backgroundColor: Colors.background,
     },
     header: {
         flexDirection: 'row',
