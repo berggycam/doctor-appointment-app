@@ -1,50 +1,91 @@
-# Welcome to your Expo app 👋
+# Healthcare Appointment Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern, production-grade healthcare appointment application built with React Native (Expo) and TypeScript. This app features a clean, clinical design and a comprehensive set of features for patients to manage their healthcare journey.
 
-## Get started
+## Features
 
-1. Install dependencies
+### 🔐 Authentication
+- **Secure Login & Sign Up**: Email/password authentication with validation.
+- **Auth Context**: Global state management for user sessions.
 
-   ```bash
-   npm install
-   ```
+### 🏠 Home Dashboard
+- **Personalized Greeting**: Welcomes the user by name.
+- **Next Appointment Card**: Prominent display of upcoming visits.
+- **Quick Actions**: One-tap access to key features (Find Doctor, Lab Results, Medicines).
+- **Recent Doctors**: Horizontal scroll of recently visited specialists.
 
-2. Start the app
+### 🔍 Doctor Search & Booking
+- **Find Specialists**: Search doctors by name or specialty.
+- **Detailed Profiles**: View doctor bio, experience, ratings, and patient reviews.
+- **Easy Booking**: Select date and time slots to schedule appointments.
 
-   ```bash
-   npx expo start
-   ```
+### 📅 Appointments Management
+- **Upcoming & Past**: Tabbed view of appointment history.
+- **Calendar View**: Monthly calendar integration.
+- **Appointment Details**: View location, doctor info, and reschedule/cancel options.
 
-In the output, you'll find options to open the app in a
+### 🧪 Medical Records
+- **Lab Results**: Access and view test results with status indicators.
+- **Detailed Analysis**: Breakdown of metrics with normal ranges.
+- **PDF Reports**: Option to download/view full reports.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 💬 Communication
+- **Chat System**: Real-time messaging interface with doctors.
+- **Video Calls**: Integrated video call UI for telemedicine.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### ⚙️ Profile & Settings
+- **User Profile**: Manage personal information.
+- **Onboarding Flow**: Intro slides for new users.
+- **Animated Splash Screen**: Custom startup animation.
 
-## Get a fresh project
+## Tech Stack
 
-When you're ready, run:
+- **Framework**: [React Native](https://reactnative.dev/) with [Expo](https://expo.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Navigation**: [Expo Router](https://docs.expo.dev/router/introduction/) (File-based routing)
+- **Styling**: Custom `StyleSheet` with a centralized Theme system
+- **Icons**: SF Symbols via `react-native-sfsymbols` (or compatible fallback)
+- **Storage**: `@react-native-async-storage/async-storage`
+- **Video/Audio**: `expo-av`
 
-```bash
-npm run reset-project
+## Getting Started
+
+1.  **Install dependencies**
+
+    ```bash
+    npm install
+    ```
+
+2.  **Start the app**
+
+    ```bash
+    npx expo start
+    ```
+
+3.  **Run on device/emulator**
+    - Press `a` for Android emulator.
+    - Press `i` for iOS simulator.
+    - Scan the QR code with Expo Go on your physical device.
+
+## Project Structure
+
+```
+/app                # Expo Router screens and layouts
+  /(tabs)           # Main tab navigator (Home, Appointments, Chat, Profile)
+  /auth             # Authentication stack (Login, Signup)
+  /doctors          # Doctor search and booking stack
+  /lab-results      # Medical records stack
+  /onboarding       # Onboarding flow
+/components         # Reusable UI components
+  /ui               # Core primitives (Button, Input, Typography)
+/constants          # Theme definitions (Colors, Spacing)
+/context            # React Context (Auth)
+/services           # API services (Mock)
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Design Guidelines
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The app follows a strict clinical design system:
+- **Colors**: Solid white backgrounds, charcoal text, soft blue accents (`#2A72E5`).
+- **Typography**: Clean, legible fonts with clear hierarchy.
+- **Layout**: Spacious, organized, and professional.

@@ -1,98 +1,151 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+import { IconSymbol } from '@/components/ui/icon-symbol';
+import { Typography } from '@/components/ui/Typography';
+import { BorderRadius, Colors, Shadows, Spacing } from '@/constants/theme';
+import { useRouter } from 'expo-router';
+import React from 'react';
+import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
+  const router = useRouter();
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+    <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.content}>
+        {/* Header */}
+        <View style={styles.header}>
+          <View>
+            <Typography variant="body" color={Colors.textSecondary}>Good Morning,</Typography>
+            <Typography variant="h2" weight="bold">David</Typography>
+          </View>
+          <View style={styles.avatarPlaceholder} />
+        </View>
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+        {/* Next Appointment Card */}
+        <View style={styles.card}>
+          <View style={styles.cardHeader}>
+            <Typography variant="h3" color={Colors.white} weight="semibold">Next Appointment</Typography>
+            <IconSymbol name="calendar" size={24} color={Colors.white} />
+          </View>
+          <View style={styles.appointmentInfo}>
+            <Typography variant="body" color={Colors.white} weight="medium">Dr. Sarah Wilson</Typography>
+            <Typography variant="caption" color="rgba(255,255,255,0.8)">General Practitioner</Typography>
+            <View style={styles.timeContainer}>
+              <IconSymbol name="clock.fill" size={16} color={Colors.white} />
+              <Typography variant="body" color={Colors.white} style={{ marginLeft: Spacing.xs }}>Today, 10:00 AM</Typography>
+            </View>
+          </View>
+        </View>
+
+        {/* Quick Actions */}
+        <Typography variant="h3" weight="semibold" style={styles.sectionTitle}>Quick Actions</Typography>
+        <View style={styles.actionsGrid}>
+          <ActionButton icon="magnifyingglass" label="Find Doctor" onPress={() => router.push('/doctors')} />
+          <ActionButton icon="doc.text.fill" label="Lab Results" onPress={() => router.push('/lab-results')} />
+          <ActionButton icon="pills.fill" label="Medicines" onPress={() => router.push('/medicines' as any)} />
+          <ActionButton icon="phone.fill" label="Emergency" color={Colors.error} onPress={() => router.push('/emergency' as any)} />
+        </View>
+
+        {/* Recent Activity / Doctors */}
+        <Typography variant="h3" weight="semibold" style={styles.sectionTitle}>Recent Doctors</Typography>
+        {/* Placeholder for horizontal scroll of doctors */}
+        <View style={styles.doctorCard}>
+          <View style={styles.doctorAvatar} />
+          <View style={{ marginLeft: Spacing.m }}>
+            <Typography variant="body" weight="medium">Dr. James Lee</Typography>
+            <Typography variant="caption" color={Colors.textSecondary}>Cardiologist</Typography>
+          </View>
+        </View>
+
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
+const ActionButton = ({ icon, label, color = Colors.primary, onPress }: { icon: string, label: string, color?: string, onPress?: () => void }) => (
+  <TouchableOpacity style={styles.actionItem} onPress={onPress}>
+    <View style={[styles.actionIcon, { backgroundColor: color + '15' }]}>
+      <IconSymbol name={icon as any} size={24} color={color} />
+    </View>
+    <Typography variant="caption" weight="medium" style={{ marginTop: Spacing.s }}>{label}</Typography>
+  </TouchableOpacity>
+);
+
 const styles = StyleSheet.create({
-  titleContainer: {
+  container: {
+    flex: 1,
+    backgroundColor: Colors.backgroundSecondary,
+  },
+  content: {
+    padding: Spacing.l,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: Spacing.xl,
+  },
+  avatarPlaceholder: {
+    width: 40,
+    height: 40,
+    borderRadius: BorderRadius.round,
+    backgroundColor: Colors.border,
+  },
+  card: {
+    backgroundColor: Colors.primary,
+    borderRadius: BorderRadius.l,
+    padding: Spacing.l,
+    marginBottom: Spacing.xl,
+    ...Shadows.medium,
+  },
+  cardHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: Spacing.m,
+  },
+  appointmentInfo: {
+    gap: Spacing.xs,
+  },
+  timeContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
+    marginTop: Spacing.s,
+    backgroundColor: 'rgba(255,255,255,0.2)',
+    alignSelf: 'flex-start',
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    borderRadius: BorderRadius.s,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  sectionTitle: {
+    marginBottom: Spacing.m,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  actionsGrid: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: Spacing.xl,
+  },
+  actionItem: {
+    alignItems: 'center',
+    width: '22%',
+  },
+  actionIcon: {
+    width: 56,
+    height: 56,
+    borderRadius: BorderRadius.xl,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  doctorCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: Colors.white,
+    padding: Spacing.m,
+    borderRadius: BorderRadius.m,
+    ...Shadows.small,
+  },
+  doctorAvatar: {
+    width: 48,
+    height: 48,
+    borderRadius: BorderRadius.round,
+    backgroundColor: Colors.backgroundSecondary,
   },
 });
