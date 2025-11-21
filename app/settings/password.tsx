@@ -3,19 +3,16 @@ import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Input } from '@/components/ui/Input';
 import { Typography } from '@/components/ui/Typography';
 import { Colors, Spacing } from '@/constants/theme';
-import { useAuth } from '@/context/AuthContext';
 import { Stack, useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function PersonalInfoScreen() {
+export default function ChangePasswordScreen() {
     const router = useRouter();
-    const { user } = useAuth();
-    const [name, setName] = useState(user?.name || 'David Johnson');
-    const [email, setEmail] = useState(user?.email || 'david.johnson@example.com');
-    const [phone, setPhone] = useState('+1 234 567 8900');
-    const [dob, setDob] = useState('1990-01-01');
+    const [currentPassword, setCurrentPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
     const handleSave = () => {
         // Save logic here
@@ -29,39 +26,34 @@ export default function PersonalInfoScreen() {
                 <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
                     <IconSymbol name="chevron.left" size={24} color={Colors.text} />
                 </TouchableOpacity>
-                <Typography variant="h3" weight="bold">Personal Information</Typography>
+                <Typography variant="h3" weight="bold">Change Password</Typography>
                 <View style={{ width: 24 }} />
             </View>
 
             <ScrollView contentContainerStyle={styles.content}>
                 <View style={styles.form}>
                     <Input
-                        label="Full Name"
-                        value={name}
-                        onChangeText={setName}
+                        label="Current Password"
+                        value={currentPassword}
+                        onChangeText={setCurrentPassword}
+                        secureTextEntry
                     />
                     <Input
-                        label="Email"
-                        value={email}
-                        onChangeText={setEmail}
-                        keyboardType="email-address"
+                        label="New Password"
+                        value={newPassword}
+                        onChangeText={setNewPassword}
+                        secureTextEntry
                     />
                     <Input
-                        label="Phone Number"
-                        value={phone}
-                        onChangeText={setPhone}
-                        keyboardType="phone-pad"
-                    />
-                    <Input
-                        label="Date of Birth"
-                        value={dob}
-                        onChangeText={setDob}
-                        placeholder="YYYY-MM-DD"
+                        label="Confirm New Password"
+                        value={confirmPassword}
+                        onChangeText={setConfirmPassword}
+                        secureTextEntry
                     />
                 </View>
 
                 <Button
-                    title="Save Changes"
+                    title="Update Password"
                     onPress={handleSave}
                     style={styles.saveButton}
                 />

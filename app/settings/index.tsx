@@ -49,7 +49,7 @@ export default function SettingsScreen() {
                         trackColor={{ false: Colors.border, true: Colors.primary }}
                     />
                 </View>
-                <TouchableOpacity style={styles.linkItem}>
+                <TouchableOpacity style={styles.linkItem} onPress={() => router.push('/settings/password' as any)}>
                     <View style={styles.settingLabel}>
                         <IconSymbol name="lock.fill" size={20} color={Colors.text} />
                         <Typography variant="body" style={{ marginLeft: Spacing.m }}>Change Password</Typography>
@@ -58,14 +58,14 @@ export default function SettingsScreen() {
                 </TouchableOpacity>
 
                 <Typography variant="h3" weight="semibold" style={[styles.sectionTitle, { marginTop: Spacing.xl }]}>About</Typography>
-                <TouchableOpacity style={styles.linkItem}>
+                <TouchableOpacity style={styles.linkItem} onPress={() => router.push('/settings/terms' as any)}>
                     <View style={styles.settingLabel}>
                         <IconSymbol name="doc.text.fill" size={20} color={Colors.text} />
                         <Typography variant="body" style={{ marginLeft: Spacing.m }}>Terms of Service</Typography>
                     </View>
                     <IconSymbol name="chevron.right" size={16} color={Colors.textTertiary} />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.linkItem}>
+                <TouchableOpacity style={styles.linkItem} onPress={() => router.push('/settings/privacy' as any)}>
                     <View style={styles.settingLabel}>
                         <IconSymbol name="hand.raised.fill" size={20} color={Colors.text} />
                         <Typography variant="body" style={{ marginLeft: Spacing.m }}>Privacy Policy</Typography>
